@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/ustin/CLionProjects/main_src/src/main.cpp
+immintrin.h
+-
+bits/stdc++.h
+-
+unordered_map
+-
+unordered_set
+-
+chrono
+-
+random
+-
+
