@@ -54,4 +54,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/main_src.dir/DependInfo.cmake"
+  "CMakeFiles/fast_stress.dir/DependInfo.cmake"
+  "CMakeFiles/slow_stress.dir/DependInfo.cmake"
   )

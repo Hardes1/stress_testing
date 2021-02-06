@@ -3,3 +3,9 @@
 
 CMakeFiles/main_src.dir/src/main.cpp.obj: ../src/main.cpp
 
+CMakeFiles/main_src.dir/stress-testing/fast.cpp.obj: ../stress-testing/fast.cpp
+
+CMakeFiles/main_src.dir/stress-testing/gen.cpp.obj: ../stress-testing/gen.cpp
+
+CMakeFiles/main_src.dir/stress-testing/slow.cpp.obj: ../stress-testing/slow.cpp
+

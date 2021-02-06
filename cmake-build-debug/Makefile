@@ -75,17 +75,6 @@ CMAKE_BINARY_DIR = C:\Users\ustin\CLionProjects\main_src\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2020.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,6 +85,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"C:\Program Files\JetBrains\CLion 2020.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -142,6 +142,32 @@ main_src/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main_src.dir\build.make CMakeFiles/main_src.dir/build
 .PHONY : main_src/fast
 
+#=============================================================================
+# Target rules for targets named fast_stress
+
+# Build rule for target.
+fast_stress: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 fast_stress
+.PHONY : fast_stress
+
+# fast build rule for target.
+fast_stress/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fast_stress.dir\build.make CMakeFiles/fast_stress.dir/build
+.PHONY : fast_stress/fast
+
+#=============================================================================
+# Target rules for targets named slow_stress
+
+# Build rule for target.
+slow_stress: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 slow_stress
+.PHONY : slow_stress
+
+# fast build rule for target.
+slow_stress/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\slow_stress.dir\build.make CMakeFiles/slow_stress.dir/build
+.PHONY : slow_stress/fast
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -169,6 +195,60 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main_src.dir\build.make CMakeFiles/main_src.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+stress-testing/fast.obj: stress-testing/fast.cpp.obj
+
+.PHONY : stress-testing/fast.obj
+
+# target to build an object file
+stress-testing/fast.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fast_stress.dir\build.make CMakeFiles/fast_stress.dir/stress-testing/fast.cpp.obj
+.PHONY : stress-testing/fast.cpp.obj
+
+stress-testing/fast.i: stress-testing/fast.cpp.i
+
+.PHONY : stress-testing/fast.i
+
+# target to preprocess a source file
+stress-testing/fast.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fast_stress.dir\build.make CMakeFiles/fast_stress.dir/stress-testing/fast.cpp.i
+.PHONY : stress-testing/fast.cpp.i
+
+stress-testing/fast.s: stress-testing/fast.cpp.s
+
+.PHONY : stress-testing/fast.s
+
+# target to generate assembly for a file
+stress-testing/fast.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fast_stress.dir\build.make CMakeFiles/fast_stress.dir/stress-testing/fast.cpp.s
+.PHONY : stress-testing/fast.cpp.s
+
+stress-testing/slow.obj: stress-testing/slow.cpp.obj
+
+.PHONY : stress-testing/slow.obj
+
+# target to build an object file
+stress-testing/slow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\slow_stress.dir\build.make CMakeFiles/slow_stress.dir/stress-testing/slow.cpp.obj
+.PHONY : stress-testing/slow.cpp.obj
+
+stress-testing/slow.i: stress-testing/slow.cpp.i
+
+.PHONY : stress-testing/slow.i
+
+# target to preprocess a source file
+stress-testing/slow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\slow_stress.dir\build.make CMakeFiles/slow_stress.dir/stress-testing/slow.cpp.i
+.PHONY : stress-testing/slow.cpp.i
+
+stress-testing/slow.s: stress-testing/slow.cpp.s
+
+.PHONY : stress-testing/slow.s
+
+# target to generate assembly for a file
+stress-testing/slow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\slow_stress.dir\build.make CMakeFiles/slow_stress.dir/stress-testing/slow.cpp.s
+.PHONY : stress-testing/slow.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -177,10 +257,18 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... fast_stress
 	@echo ... main_src
+	@echo ... slow_stress
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... stress-testing/fast.obj
+	@echo ... stress-testing/fast.i
+	@echo ... stress-testing/fast.s
+	@echo ... stress-testing/slow.obj
+	@echo ... stress-testing/slow.i
+	@echo ... stress-testing/slow.s
 .PHONY : help
 
 

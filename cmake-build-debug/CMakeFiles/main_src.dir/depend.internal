@@ -3,3 +3,9 @@
 
 CMakeFiles/main_src.dir/src/main.cpp.obj
  C:/Users/ustin/CLionProjects/main_src/src/main.cpp
+CMakeFiles/main_src.dir/stress-testing/fast.cpp.obj
+ C:/Users/ustin/CLionProjects/main_src/stress-testing/fast.cpp
+CMakeFiles/main_src.dir/stress-testing/gen.cpp.obj
+ C:/Users/ustin/CLionProjects/main_src/stress-testing/gen.cpp
+CMakeFiles/main_src.dir/stress-testing/slow.cpp.obj
+ C:/Users/ustin/CLionProjects/main_src/stress-testing/slow.cpp
